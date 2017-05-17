@@ -8,15 +8,12 @@ package principal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author 31312020
- */
-public class ProjetoSegurado {
 
-    /**
-     * @param args the command line arguments
-     */
+public class ProjetoSegurado {
+    
+    // CONTROLLER
+    // A classe principal vai receber e coordenar a operação do sistema
+    
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner lerInt = new Scanner(System.in);
@@ -36,12 +33,16 @@ public class ProjetoSegurado {
             System.out.print("Digite o cpf do segurado: ");
             long cpf = lerLong.nextLong(); 
             
+            // CREATOR
+            // Cria uma nova instancia da classe segurado             
             Segurado segurado = new Segurado(nome,cpf); 
             segurados.add(i,segurado);             
 
             System.out.print("Digite o numero de autorizacao do Plano de Saude: ");
             int numeroAutorizacao = lerInt.nextInt();
             
+            // CREATOR
+            // Cria uma nova instancia da classe PlanoSaude 
             PlanoSaude plano = new PlanoSaude(numeroAutorizacao);
             planos.add(i,plano);
             
@@ -50,10 +51,14 @@ public class ProjetoSegurado {
             
             System.out.println("\nNome do segurado: "+ plano.getSegurado().get(0).getNome());
             System.out.println("Numero do plano de saude: "+ segurado.getPlano().get(0).getNumeroAutorizacao());
-               
+            
+            // CREATOR
+            // Cria uma nova instancia da classe Procedimento 
             Procedimento procedimento = new Procedimento();
             procedimento.tipoProcedimento();
             
+            // CREATOR
+            // Cria uma nova instancia da classe Autorizacao 
             Autorizacao autorizacao = new Autorizacao();           
             autorizacao.autorizacao();
             
